@@ -32,14 +32,15 @@
         <p class="text-base  text-gray-800 text-center   col-span-2">
           5/19/2021
         </p>
-        <p class="text-base   text-center flex flex-col px-4   col-span-2">
-          <span
-            class="text-sm border  text-center border-gray-600 text-gray-600 py-1 rounded-full px-6  "
-            >Not Invoiced</span
-          >
-
-          <!-- <span>icon</span> -->
-        </p>
+        <div
+          class="text-base text-[ #3C3C3C] text-center flex items-center space-x-2 px-4 relative col-span-2"
+        >
+          <DropDown :state="false" />
+          <font-awesome-icon
+            icon="fa-solid fa-chevron-down"
+            class="absolute top-[8px] right-[5px]"
+          />
+        </div>
       </div>
 
       <div
@@ -56,12 +57,19 @@
         <p class="text-base  text-gray-800 text-center   col-span-2">
           5/19/2021
         </p>
-        <p class="text-base   text-center flex flex-col px-4   col-span-2">
+        <p
+          class="text-base   text-center relative  flex flex-col px-3 col-span-2"
+        >
           <span
-            class="text-sm border  text-center border-gray-600 text-gray-600 py-1 rounded-full px-6  "
-            >Not Invoiced</span
+            class="text-sm  border-gray-600 border text-gray-600 text-center w-[170px] flex items-center justify-between h-8  rounded-full px-5 py-1.5  "
           >
-          <!-- <span>icon</span> -->
+            <span>Not Invoiced</span>
+            <font-awesome-icon icon="fa-solid fa-chevron-down" class="" />
+          </span>
+          <font-awesome-icon
+            icon="fa-solid fa-chevron-down"
+            class="absolute top-[8px] right-[5px]"
+          />
         </p>
       </div>
 
@@ -81,13 +89,24 @@
         <p class="text-base  text-gray-800 text-center   col-span-2">
           5/19/2021
         </p>
-        <p
-          class="text-base   text-center relative flex flex-col px-4 col-span-2"
-        >
+        <p class="text-base text-center relative flex px-4 flex-col col-span-2">
           <span
-            class="text-sm bg-blue-600 text-center  rounded-full px-12 text-white py-1.5  "
-            >Partial</span
+            class="text-sm bg-blue-600 text-center w-[170px] h-8 flex space-x-12 items-center   rounded-full px-12 text-white py-1.5  "
           >
+            <span>Partial</span>
+            <font-awesome-icon icon="fa-solid fa-chevron-down" class="" />
+          </span>
+          <font-awesome-icon
+            @click="show = !show"
+            icon="fa-solid fa-chevron-down"
+            class="absolute top-[8px] right-[5px] cursor-pointer"
+          />
+          <font-awesome-icon
+            v-show="show"
+            icon="fa-solid fa-chevron-down"
+            class="absolute z-20 top-[8px] right-[5px] cursor-pointer"
+          />
+          <span class="relative right-[400px] mt-4"><InvoiceModal /></span>
         </p>
       </div>
 
@@ -108,12 +127,18 @@
           5/19/2021
         </p>
         <p
-          class="text-base flex flex-col px-4  text-center relative col-span-2"
+          class="text-base   text-center relative  flex flex-col px-3 col-span-2"
         >
           <span
-            class="text-sm bg-[#247A51] text-center  rounded-full px-14 text-white py-1.5  "
-            >Full</span
+            class="text-sm bg-[#247A51] text-white text-center w-[170px] flex items-center justify-between h-8  rounded-full px-5 py-1.5  "
           >
+            <span>Full</span>
+            <font-awesome-icon icon="fa-solid fa-chevron-down" class="" />
+          </span>
+          <font-awesome-icon
+            icon="fa-solid fa-chevron-down"
+            class="absolute top-[8px] right-[5px]"
+          />
         </p>
       </div>
 
@@ -134,18 +159,26 @@
           5/19/2021
         </p>
         <p
-          class="text-base   text-center relative flex flex-col px-4 col-span-2"
+          class="text-base   text-center relative  flex flex-col px-3 col-span-2"
         >
           <span
-            class="text-sm bg-[#D8364B] text-center  rounded-full px-10 text-white py-1.5  "
-            >On Hold</span
+            class="text-sm bg-[#D8364B] text-white text-center w-[170px] flex items-center justify-between h-8  rounded-full px-5 py-1.5  "
           >
+            <span>On Hold</span>
+            <font-awesome-icon icon="fa-solid fa-chevron-down" class="" />
+          </span>
+          <font-awesome-icon
+            icon="fa-solid fa-chevron-down"
+            class="absolute top-[8px] right-[5px]"
+          />
         </p>
       </div>
     </div>
   </div>
 </template>
 <script>
+import DropDown from '../Resuables/DropDown.vue'
+import InvoiceModal from './InvoiceModal.vue'
 import ProgressBar from './ProgressBar.vue'
 export default {
   data () {
@@ -155,7 +188,9 @@ export default {
   },
   name: 'InProgressTable',
   components: {
-    ProgressBar
+    ProgressBar,
+    DropDown,
+    InvoiceModal
   }
 }
 </script>

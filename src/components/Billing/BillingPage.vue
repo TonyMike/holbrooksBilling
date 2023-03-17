@@ -12,21 +12,19 @@
     <!-- <DropDown /> -->
     <div class="mt-8 space-y-6">
       <CompletedTable />
-      <!-- <InProgressTable /> -->
+      <InProgressTable />
     </div>
   </div>
 </template>
 
 <script>
 import CompletedTable from './CompletedTable.vue'
-// import InProgressTable from './InProgressTable.vue'
-// import DropDown from '../Resuables/DropDown.vue'
+import InProgressTable from './InProgressTable.vue'
 export default {
   name: 'BillingPage',
   components: {
-    CompletedTable
-    // InProgressTable,
-    // DropDown
+    CompletedTable,
+    InProgressTable
   }
 }
 </script>

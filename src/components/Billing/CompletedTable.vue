@@ -29,14 +29,19 @@
         <p class="text-base  text-gray-800 text-center   col-span-2">
           5/19/2021
         </p>
-        <p class="text-base   text-center  px-4 col-span-2">
+        <p
+          class="text-base   text-center relative  flex flex-col px-3 col-span-2"
+        >
           <span
-            class="text-sm border  text-center border-gray-600 flex flex-col text-gray-600 py-1 rounded-full px-6  "
-            >Not Invoiced
-            <Icon icon="material-symbols:keyboard-arrow-down" />
+            class="text-sm  border-gray-600 border text-gray-600 text-center w-[170px] flex items-center justify-between h-8  rounded-full px-5 py-1.5  "
+          >
+            <span>Not Invoiced</span>
+            <font-awesome-icon icon="fa-solid fa-chevron-down" class="" />
           </span>
-
-          <!-- <span>icon</span> -->
+          <font-awesome-icon
+            icon="fa-solid fa-chevron-down"
+            class="absolute top-[8px] right-[5px]"
+          />
         </p>
       </div>
 
@@ -54,12 +59,19 @@
         <p class="text-base  text-gray-800 text-center   col-span-2">
           5/19/2021
         </p>
-        <p class="text-base   text-center  flex flex-col px-4 col-span-2">
+        <p
+          class="text-base   text-center relative  flex flex-col px-3 col-span-2"
+        >
           <span
-            class="text-sm border  text-center border-gray-600 text-gray-600 py-1 rounded-full px-6  "
-            >Not Invoiced</span
+            class="text-sm border-gray-600 border text-gray-600 text-center w-[170px] flex items-center justify-between h-8  rounded-full px-5 py-1.5  "
           >
-          <!-- <span>icon</span> -->
+            <span>Not Invoiced</span>
+            <font-awesome-icon icon="fa-solid fa-chevron-down" class="" />
+          </span>
+          <font-awesome-icon
+            icon="fa-solid fa-chevron-down"
+            class="absolute top-[8px] right-[5px]"
+          />
         </p>
       </div>
 
@@ -81,9 +93,21 @@
         </p>
         <p class="text-base text-center relative flex px-4 flex-col col-span-2">
           <span
-            class="text-sm bg-blue-600 text-center   rounded-full px-12 text-white py-1.5  "
-            >Partial</span
+            class="text-sm bg-blue-600 text-center w-[170px] h-8 flex space-x-12 items-center   rounded-full px-12 text-white py-1.5  "
           >
+            <span>Partial</span>
+            <font-awesome-icon icon="fa-solid fa-chevron-down" class="" />
+          </span>
+          <font-awesome-icon
+            @click="show = !show"
+            icon="fa-solid fa-chevron-down"
+            class="absolute top-[8px] right-[5px] cursor-pointer"
+          />
+          <font-awesome-icon
+            v-show="show"
+            icon="fa-solid fa-chevron-down"
+            class="absolute z-20 top-[8px] right-[5px] cursor-pointer"
+          />
           <span class="relative right-[400px] mt-4"><InvoiceModal /></span>
         </p>
       </div>
@@ -107,9 +131,15 @@
           class="text-base   text-center relative  flex flex-col px-3 col-span-2"
         >
           <span
-            class="text-sm bg-[#FFC517] text-black text-center  rounded-full px-5 py-1.5  "
-            >Send to Costing</span
+            class="text-sm bg-[#FFC517] text-black text-center w-[170px] flex items-center justify-between h-8  rounded-full px-5 py-1.5  "
           >
+            <span>Send to Costing</span>
+            <font-awesome-icon icon="fa-solid fa-chevron-down" class="" />
+          </span>
+          <font-awesome-icon
+            icon="fa-solid fa-chevron-down"
+            class="absolute top-[8px] right-[5px]"
+          />
         </p>
       </div>
 
@@ -129,14 +159,15 @@
         <p class="text-base  text-gray-800 text-center   col-span-2">
           5/19/2021
         </p>
-        <p
-          class="text-base   text-center relative flex flex-col px-4 col-span-2"
+        <div
+          class="text-base text-[ #3C3C3C]  text-center flex flex-col px-4 relative col-span-2"
         >
-          <span
-            class="text-sm bg-blue-600 text-center  rounded-full px-12 text-white py-1.5  "
-            >Partial</span
-          >
-        </p>
+          <DropDown />
+          <font-awesome-icon
+            icon="fa-solid fa-chevron-down"
+            class="absolute top-[8px] right-[5px]"
+          />
+        </div>
       </div>
 
       <!-- partial -->
@@ -155,14 +186,15 @@
         <p class="text-base  text-gray-800 text-center   col-span-2">
           5/19/2021
         </p>
-        <p
-          class="text-base   text-center relative flex flex-col px-4 col-span-2"
+        <div
+          class="text-base text-[ #3C3C3C] text-center flex items-center space-x-2 px-4 relative col-span-2"
         >
-          <span
-            class="text-sm bg-[#247A51] text-center  rounded-full px-14 text-white py-1.5  "
-            >Full</span
-          >
-        </p>
+          <DropDown />
+          <font-awesome-icon
+            icon="fa-solid fa-chevron-down"
+            class="absolute top-[8px] right-[5px]"
+          />
+        </div>
       </div>
 
       <div
@@ -180,39 +212,13 @@
           5/19/2021
         </p>
         <div
-          class="text-base text-[ #3C3C3C]  text-center flex flex-col px-4 relative col-span-2"
+          class="text-base text-[ #3C3C3C] text-center flex items-center space-x-2 px-4 relative col-span-2"
         >
           <DropDown />
-          <!-- <span
-            class="text-sm border  text-center border-gray-600 text-gray-600 py-1 flex justify-around items-center rounded-full px-6  "
-          >
-            <span>Not Invoiced</span>
-            <font-awesome-icon icon="fa-solid fa-chevron-down" />
-          </span>
-          <ul class="bg-white absolute rounded-md top-8 shadow-md">
-            <li
-              class="py-2 text-sm pl-4 w-[165px] cursor-pointer hover:bg-slate-100 text-left"
-            >
-              Not Invoiced
-            </li>
-            <li
-              class="py-2 text-sm pl-4 w-[165px] cursor-pointer hover:bg-slate-100 text-left"
-            >
-              Partial
-            </li>
-            <li
-              class="py-2 text-sm pl-4 w-[165px] cursor-pointer hover:bg-slate-100 text-left"
-            >
-              Full
-            </li>
-            <li
-              class="py-2 text-sm pl-4 w-[165px] cursor-pointer hover:bg-slate-100 text-left"
-            >
-              Send to Costing
-            </li>
-          </ul> -->
-
-          <!-- <span>icon</span> -->
+          <font-awesome-icon
+            icon="fa-solid fa-chevron-down"
+            class="absolute top-[8px] right-[5px]"
+          />
         </div>
       </div>
     </div>
